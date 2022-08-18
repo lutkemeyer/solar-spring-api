@@ -1,9 +1,13 @@
 package com.ltk.api.solar.utils;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.time.ZoneId;
 import java.util.Locale;
 import java.util.TimeZone;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Defaults {
 	
 	public static final Locale LOCALE = new Locale("pt", "BR");
