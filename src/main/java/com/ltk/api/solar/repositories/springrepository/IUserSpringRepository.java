@@ -8,14 +8,14 @@ import java.util.Optional;
 @Repository
 public interface IUserSpringRepository extends IGenericSpringRepository<User> {
 
-    Optional<User> findByIdAndActiveIsTrue(String id);
+    Optional<User> findByIdAndTimeRemovedIsNull(String id);
 
-    boolean existsByLoginEqualsAndPasswordEqualsAndActiveIsTrue(String login, String password);
+    boolean existsByLoginEqualsAndPasswordEqualsAndTimeRemovedIsNull(String login, String password);
 
-    Optional<User> findByLoginEqualsAndPasswordEqualsAndActiveIsTrue(String login, String password);
+    Optional<User> findByLoginEqualsAndPasswordEqualsAndTimeRemovedIsNull(String login, String password);
     
-    Optional<User> findByLoginEqualsAndActiveIsTrue(String login);
+    Optional<User> findByLoginEqualsAndTimeRemovedIsNull(String login);
 
-    int countByActiveIsTrue();
+    int countByTimeRemovedIsNull();
 
 }

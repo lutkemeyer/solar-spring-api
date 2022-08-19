@@ -8,9 +8,7 @@ import java.util.Optional;
 @Repository
 public interface ICitySpringRepository extends IGenericSpringRepository<City> {
 
-	Optional<City> findByIdAndActiveIsTrue(String id);
-
-	Optional<City> findByIbgeCodeEqualsIgnoreCaseAndActiveIsTrue(String ibgeCode);
+	Optional<City> findByIbgeCodeEqualsIgnoreCaseAndTimeRemovedIsNull(String ibgeCode);
 
 	boolean existsByName(String name);
 
@@ -20,8 +18,8 @@ public interface ICitySpringRepository extends IGenericSpringRepository<City> {
 
 	boolean existsByIbgeCodeEqualsIgnoreCase(String ibgeCode);
 
-	Optional<City> findByNameEqualsIgnoreCaseAndActiveIsTrueAndState_Uf(String cityName, String ufState);
+	Optional<City> findByNameEqualsIgnoreCaseAndTimeRemovedIsNullAndState_Uf(String cityName, String ufState);
 
-	int countByActiveIsTrue();
+	int countByTimeRemovedIsNull();
 
 }

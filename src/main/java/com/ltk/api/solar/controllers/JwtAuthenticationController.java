@@ -33,10 +33,10 @@ public class JwtAuthenticationController {
 		try {
 			authenticate(userCredentialsRequestTO.getUsername(), userCredentialsRequestTO.getPassword());
 			
-			final UserDetails userDetails = jwtInMemoryUserDetailsService
+			UserDetails userDetails = jwtInMemoryUserDetailsService
 					.loadUserByUsername(userCredentialsRequestTO.getUsername());
 			
-			final String token = jwtTokenUtil.generateToken(userDetails);
+			String token = jwtTokenUtil.generateToken(userDetails);
 			
 			return ResponseEntity.ok(TokenResponseTO.builder().token(token).build());
 			

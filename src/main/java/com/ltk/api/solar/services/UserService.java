@@ -17,7 +17,7 @@ public class UserService {
 	private final IUserSpringRepository repository;
 	
 	public Optional<User> findByIdAndActiveIsTrue(String id) {
-		return repository.findByIdAndActiveIsTrue(id);
+		return repository.findByIdAndTimeRemovedIsNull(id);
 	}
 	
 	public boolean existsById(String id) {
@@ -30,10 +30,10 @@ public class UserService {
 	
 	@Transactional
 	public void inactiveById(String id) {
-		repository.findById(id)
-				.ifPresent(user -> {
-					user.setActive(false);
-				});
+//		repository.findById(id)
+//				.ifPresent(user -> {
+//					user.setActive(false);
+//				});
 	}
 	
 }

@@ -1,7 +1,11 @@
 package com.ltk.api.solar.utils;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import static java.util.UUID.randomUUID;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Uuid {
 
     private static final String TEMPORARY_PREFIX = "TEMP_";

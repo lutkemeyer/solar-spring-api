@@ -34,7 +34,7 @@ public class CityService {
     }
 
     public Optional<City> findByIbgeCode(String codIbge) {
-        return repository.findByIbgeCodeEqualsIgnoreCaseAndActiveIsTrue(codIbge);
+        return repository.findByIbgeCodeEqualsIgnoreCaseAndTimeRemovedIsNull(codIbge);
     }
 
 

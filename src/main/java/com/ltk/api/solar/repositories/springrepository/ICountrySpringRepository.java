@@ -8,8 +8,8 @@ import java.util.Optional;
 @Repository
 public interface ICountrySpringRepository extends IGenericSpringRepository<Country> {
 
-    Optional<Country> findByIdAndActiveIsTrue(String id);
+    Optional<Country> findByIdAndTimeRemovedIsNull(String id);
 
-    int countByActiveIsTrue();
+    int countByTimeRemovedIsNull();
 
 }

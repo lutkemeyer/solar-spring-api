@@ -8,20 +8,20 @@ import java.util.Optional;
 @Repository
 public interface IStateSpringRepository extends IGenericSpringRepository<State> {
 
-    Optional<State> findByIdAndActiveIsTrue(String id);
+    Optional<State> findByIdAndTimeRemovedIsNull(String id);
 
-    boolean existsByNameEqualsIgnoreCaseAndActiveIsTrue(String name);
+    boolean existsByNameEqualsIgnoreCaseAndTimeRemovedIsNull(String name);
 
-    boolean existsByIbgeCodeEqualsIgnoreCaseAndActiveIsTrue(String ibgeCode);
+    boolean existsByIbgeCodeEqualsIgnoreCaseAndTimeRemovedIsNull(String ibgeCode);
 
-    boolean existsByUfEqualsIgnoreCaseAndActiveIsTrue(String uf);
+    boolean existsByUfEqualsIgnoreCaseAndTimeRemovedIsNull(String uf);
 
-    Optional<State> findByNameEqualsIgnoreCaseAndActiveIsTrue(String name);
+    Optional<State> findByNameEqualsIgnoreCaseAndTimeRemovedIsNull(String name);
 
-    Optional<State> findByIbgeCodeEqualsIgnoreCaseAndActiveIsTrue(String ibgeCode);
+    Optional<State> findByIbgeCodeEqualsIgnoreCaseAndTimeRemovedIsNull(String ibgeCode);
 
-    Optional<State> findByUfEqualsIgnoreCaseAndActiveIsTrue(String uf);
+    Optional<State> findByUfEqualsIgnoreCaseAndTimeRemovedIsNull(String uf);
 
-    int countByActiveIsTrue();
+    int countByTimeRemovedIsNull();
 
 }
