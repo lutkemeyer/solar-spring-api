@@ -1,11 +1,15 @@
-//package com.ltk.api.solar.config;
-//
-//public class Routes {
-//
-//	public static final String PREFIX = "/api";
-//	public static final String AUTH = PREFIX + "/auth";
-//	public static final String SIGN_UP = PREFIX + "/sign-up";
-//	public static final String SIGN_IN = "/sign-in";
-//	public static final String FORGOT_PASSWORD = PREFIX + "/forgot-password";
-//	public static final String CONFIRMATION = PREFIX + "/confirmation";
-//}
+package com.ltk.api.solar.config;
+
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class Routes {
+
+	public static final String PREFIX = "/api";
+	
+	public static final String LOGIN = PREFIX + "/login";
+	public static final String LOGIN_SIGNIN = "/sign-in";
+	public static final String LOGIN_SIGNUP = "/sign-up";
+	
+}

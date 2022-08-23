@@ -1,5 +1,6 @@
 package com.ltk.api.solar.config;
 
+import com.ltk.api.solar.utils.enums.EnumConfiguration;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ import static com.ltk.api.solar.SolarApplication.CONFIGURATION;
 @Log4j2
 @Configuration
 @EnableJpaRepositories(basePackages = "com.ltk.api.solar.repositories", repositoryImplementationPostfix = "Impl")
-public class DatabaseConfiguration {
+public class DatabaseConfig {
 	
 	@Bean
 	public EntityManagerFactory entityManagerFactory() {
@@ -35,7 +36,7 @@ public class DatabaseConfiguration {
 	@Bean
 	public DataSource dataSource() {
 		
-		if(CONFIGURATION == EConfiguration.DESENVOLVIMENTO) {
+		if(CONFIGURATION == EnumConfiguration.DESENVOLVIMENTO) {
 			
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("org.postgresql.Driver");

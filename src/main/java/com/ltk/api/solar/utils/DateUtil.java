@@ -1,5 +1,6 @@
 package com.ltk.api.solar.utils;
 
+import com.ltk.api.solar.SolarApplication;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.time.DateUtils;
@@ -12,8 +13,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import static com.ltk.api.solar.utils.Defaults.ZONE_ID;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DateUtil extends DateUtils {
@@ -503,7 +502,7 @@ public class DateUtil extends DateUtils {
 			return null;
 		}
 		try {
-			return Date.from(localDate.atStartOfDay(ZONE_ID)
+			return Date.from(localDate.atStartOfDay(SolarApplication.Defaults.ZONE_ID)
 					.toInstant());
 		} catch(Exception e) {
 			return null;

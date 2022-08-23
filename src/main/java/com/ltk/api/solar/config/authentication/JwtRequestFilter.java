@@ -1,4 +1,4 @@
-package com.ltk.api.solar.utils;
+package com.ltk.api.solar.config.authentication;
 
 import com.ltk.api.solar.services.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;

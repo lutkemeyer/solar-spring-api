@@ -1,5 +1,6 @@
-package com.ltk.api.solar.utils;
+package com.ltk.api.solar.config.authentication;
 
+import com.ltk.api.solar.utils.DateUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -38,8 +39,9 @@ public class JwtTokenUtil {
 	}
 	
 	private Claims getAllClaimsFromToken(String token) {
-		return Jwts.parser()
+		return Jwts.parserBuilder()
 				.setSigningKey(KEY)
+				.build()
 				.parseClaimsJws(token)
 				.getBody();
 	}

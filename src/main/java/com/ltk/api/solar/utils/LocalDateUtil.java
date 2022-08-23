@@ -1,5 +1,6 @@
 package com.ltk.api.solar.utils;
 
+import com.ltk.api.solar.SolarApplication;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.logging.log4j.LogManager;
@@ -12,7 +13,6 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.ltk.api.solar.utils.Defaults.ZONE_ID;
 import static java.time.temporal.ChronoUnit.*;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -22,7 +22,7 @@ public class LocalDateUtil {
 	
 	@NotNull
 	public static LocalDate today() {
-		return LocalDate.now(ZONE_ID);
+		return LocalDate.now(SolarApplication.Defaults.ZONE_ID);
 	}
 	
 	@NotNull
@@ -42,7 +42,7 @@ public class LocalDateUtil {
 		}
 		Calendar calendar = CalendarUtil.toCalendar(date);
 		return calendar.toInstant()
-				.atZone(ZONE_ID)
+				.atZone(SolarApplication.Defaults.ZONE_ID)
 				.toLocalDate();
 	}
 	

@@ -1,4 +1,4 @@
-package com.ltk.api.solar.utils;
+package com.ltk.api.solar.config.authentication;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -18,4 +18,5 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
 	                     AuthenticationException authException) throws IOException {
 		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
 	}
+	
 }

@@ -1,5 +1,6 @@
 package com.ltk.api.solar.models;
 
+import com.ltk.api.solar.SolarApplication;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,13 +9,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import static com.ltk.api.solar.utils.Defaults.DATABASE_SCHEMA;
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "USER", schema = DATABASE_SCHEMA)
+@Table(name = "USER", schema = SolarApplication.Defaults.DATABASE_SCHEMA)
 public class User extends BaseEntity {
 
 	@Column(name = "LOGIN",

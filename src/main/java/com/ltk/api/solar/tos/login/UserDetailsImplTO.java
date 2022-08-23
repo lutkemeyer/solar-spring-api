@@ -1,4 +1,4 @@
-package com.ltk.api.solar.config;
+package com.ltk.api.solar.tos.login;
 
 import com.ltk.api.solar.models.User;
 import lombok.*;
@@ -13,9 +13,21 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDetailsImpl implements UserDetails {
+public class UserDetailsImplTO implements UserDetails {
 	
 	private User user;
+	
+	@Builder.Default
+	private boolean accountExpired = false;
+	
+	@Builder.Default
+	private boolean enabled = true;
+	
+	@Builder.Default
+	private boolean accountLocked = false;
+	
+	@Builder.Default
+	private boolean credentialsExpired = false;
 	
 	private List<GrantedAuthority> roles;
 	
@@ -36,22 +48,17 @@ public class UserDetailsImpl implements UserDetails {
 	
 	@Override
 	public boolean isAccountNonExpired() {
-		return true;
+		return !accountExpired;
 	}
 	
 	@Override
 	public boolean isAccountNonLocked() {
-		return true;
+		return !accountLocked;
 	}
 	
 	@Override
 	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-	
-	@Override
-	public boolean isEnabled() {
-		return true;
+		return !credentialsExpired;
 	}
 	
 }

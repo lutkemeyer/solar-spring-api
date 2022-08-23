@@ -1,5 +1,6 @@
 package com.ltk.api.solar.utils;
 
+import com.ltk.api.solar.SolarApplication;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -18,7 +19,7 @@ public class LocalDateTimeUtil {
 
 	@NonNull
 	public static LocalDateTime now() {
-		return LocalDateTime.now(Defaults.ZONE_ID);
+		return LocalDateTime.now(SolarApplication.Defaults.ZONE_ID);
 	}
 
 	@NonNull
@@ -96,7 +97,7 @@ public class LocalDateTimeUtil {
 		if(cal == null) {
 			return null;
 		}
-		return LocalDateTime.ofInstant(cal.toInstant(), Defaults.ZONE_ID);
+		return LocalDateTime.ofInstant(cal.toInstant(), SolarApplication.Defaults.ZONE_ID);
 	}
 	
 	@Nullable
@@ -104,7 +105,7 @@ public class LocalDateTimeUtil {
 		if(date == null) {
 			return null;
 		}
-		return LocalDateTime.ofInstant(date.toInstant(), Defaults.ZONE_ID);
+		return LocalDateTime.ofInstant(date.toInstant(), SolarApplication.Defaults.ZONE_ID);
 	}
 	
 //	@Nullable

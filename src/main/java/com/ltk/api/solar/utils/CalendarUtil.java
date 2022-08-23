@@ -1,5 +1,6 @@
 package com.ltk.api.solar.utils;
 
+import com.ltk.api.solar.SolarApplication;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -10,22 +11,20 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.ltk.api.solar.utils.Defaults.TIME_ZONE;
-
 @Log4j2
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CalendarUtil {
 	
 	@NotNull
 	public static Calendar now() {
-		return Calendar.getInstance(TIME_ZONE);
+		return Calendar.getInstance(SolarApplication.Defaults.TIME_ZONE);
 	}
 	
 	public static Calendar toCalendar(Date date) {
 		if(date == null) {
 			return null;
 		}
-		Calendar calendar = Calendar.getInstance(TIME_ZONE);
+		Calendar calendar = Calendar.getInstance(SolarApplication.Defaults.TIME_ZONE);
 		calendar.setTime(date);
 		return calendar;
 	}
@@ -34,7 +33,7 @@ public class CalendarUtil {
 		if(ldt == null) {
 			return null;
 		}
-		Calendar calendar = Calendar.getInstance(TIME_ZONE);
+		Calendar calendar = Calendar.getInstance(SolarApplication.Defaults.TIME_ZONE);
 		calendar.clear();
 		calendar.set(ldt.getYear(), ldt.getMonthValue() - 1, ldt.getDayOfMonth(), ldt.getHour(), ldt.getMinute(), ldt.getSecond());
 		return calendar;
@@ -44,7 +43,7 @@ public class CalendarUtil {
 		if(ldt == null) {
 			return null;
 		}
-		Calendar calendar = Calendar.getInstance(TIME_ZONE);
+		Calendar calendar = Calendar.getInstance(SolarApplication.Defaults.TIME_ZONE);
 		calendar.clear();
 		calendar.set(ldt.getYear(), ldt.getMonthValue() - 1, ldt.getDayOfMonth(), 0, 0, 0);
 		return calendar;
