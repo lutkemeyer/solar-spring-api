@@ -1,6 +1,6 @@
 package com.ltk.api.solar;
 
-import com.ltk.api.solar.utils.enums.EnumConfiguration;
+import com.ltk.api.solar.tools.enums.EnumConfiguration;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +14,8 @@ import java.util.TimeZone;
 public class SolarApplication {
 
 	public static final EnumConfiguration CONFIGURATION = EnumConfiguration.DESENVOLVIMENTO;
+	
+	public static final boolean AUTH_ENABLED = false;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SolarApplication.class, args);

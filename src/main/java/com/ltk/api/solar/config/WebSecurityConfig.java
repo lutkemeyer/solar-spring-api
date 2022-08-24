@@ -1,5 +1,6 @@
 package com.ltk.api.solar.config;
 
+import com.ltk.api.solar.SolarApplication;
 import com.ltk.api.solar.config.authentication.JwtAuthenticationEntryPoint;
 import com.ltk.api.solar.config.authentication.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.disable()
 				// dont authenticate this particular request
 				.authorizeRequests()
-				.antMatchers("/api/login")
+				.antMatchers(getRequestsNotAuthenticated())
 				.permitAll()
 				.anyRequest()
 				// all other requests need to be authenticated
@@ -74,6 +75,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		// Add a filter to validate the tokens with every request
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+	}
+	
+	private static String getRequestsNotAuthenticated() {
+		return SolarApplication.AUTH_ENABLED ? "/api/login" : "/api/**";
 	}
 	
 }

@@ -1,6 +1,6 @@
 package com.ltk.api.solar.models.generators;
 
-import com.ltk.api.solar.utils.Uuid;
+import com.ltk.api.solar.tools.Uuid;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;

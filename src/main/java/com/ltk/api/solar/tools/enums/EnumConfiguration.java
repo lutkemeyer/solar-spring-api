@@ -1,4 +1,4 @@
-package com.ltk.api.solar.utils.enums;
+package com.ltk.api.solar.tools.enums;
 
 public enum EnumConfiguration {
 	

@@ -1,5 +1,7 @@
 package com.ltk.api.solar.tos.city.request;
 
+import com.ltk.api.solar.customvalidations.CompositeNameConstraint;
+import com.ltk.api.solar.customvalidations.LatitudeConstraint;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,14 +14,15 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class CityRequestTo {
 
+    @CompositeNameConstraint
     @NotBlank
     private String name;
 
-//    @Min(2)
-    private BigDecimal latitude;
+    @LatitudeConstraint
+    private BigDecimal lat;
 
 //    @Siz
-    private BigDecimal longitude;
+    private BigDecimal lng;
 
     @NotBlank
     private String ibgeCode;

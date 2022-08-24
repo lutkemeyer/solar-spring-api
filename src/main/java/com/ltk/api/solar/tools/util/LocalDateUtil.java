@@ -1,4 +1,4 @@
-package com.ltk.api.solar.utils;
+package com.ltk.api.solar.tools.util;
 
 import com.ltk.api.solar.SolarApplication;
 import lombok.AccessLevel;

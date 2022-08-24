@@ -1,10 +1,17 @@
 package com.ltk.api.solar.models;
 
+import com.ltk.api.solar.models.converters.SolarLatitudeConverter;
+import com.ltk.api.solar.models.converters.SolarLongitudeConverter;
+import com.ltk.api.solar.tools.types.SolarLatitude;
+import com.ltk.api.solar.tools.types.SolarLongitude;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Convert;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
@@ -14,17 +21,19 @@ import java.math.BigDecimal;
 @Table(name = "IRRADIATION")
 public class Irradiation extends BaseEntity {
 	
+	@Convert(converter = SolarLatitudeConverter.class)
 	@Column(name = "LAT",
 	        precision = 8,
 	        scale = 6,
 	        nullable = false)
-	private BigDecimal lat;
+	private SolarLatitude lat;
 	
+	@Convert(converter = SolarLongitudeConverter.class)
 	@Column(name = "LNG",
 	        precision = 8,
 	        scale = 6,
 	        nullable = false)
-	private BigDecimal lng;
+	private SolarLongitude lng;
 	
 	@Column(name = "JAN",
 	        scale = 6,

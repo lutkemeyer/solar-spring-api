@@ -1,8 +1,8 @@
 package com.ltk.api.solar.models;
 
 import com.ltk.api.solar.models.generators.UuidGenerator;
-import com.ltk.api.solar.utils.LocalDateTimeUtil;
-import com.ltk.api.solar.utils.Uuid;
+import com.ltk.api.solar.tools.util.LocalDateTimeUtil;
+import com.ltk.api.solar.tools.Uuid;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

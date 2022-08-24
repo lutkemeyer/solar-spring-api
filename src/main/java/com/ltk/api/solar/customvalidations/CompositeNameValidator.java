@@ -1,5 +1,7 @@
 package com.ltk.api.solar.customvalidations;
 
+import com.ltk.api.solar.tools.util.StringUtil;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
@@ -12,7 +14,11 @@ public class CompositeNameValidator implements ConstraintValidator<CompositeName
 
     @Override
     public boolean isValid(String field, ConstraintValidatorContext constraintValidatorContext) {
-        return field == null || field.split(" ").length >= 2;
+        if(field == null) {
+            return false;
+        }
+        String[] splitted = field.split("\\s+");
+        return splitted.length >= 2 && StringUtil.trimmedNe(splitted[0]) && StringUtil.trimmedNe(splitted[1]);
     }
 
 }

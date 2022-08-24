@@ -1,6 +1,6 @@
 package com.ltk.api.solar.config;
 
-import com.ltk.api.solar.utils.enums.EnumConfiguration;
+import com.ltk.api.solar.tools.enums.EnumConfiguration;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

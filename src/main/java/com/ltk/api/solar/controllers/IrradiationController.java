@@ -24,7 +24,7 @@ public class IrradiationController {
             @PathVariable(value = "lng") BigDecimal lng) {
         
         Irradiation irradiation = service.findByLatLng(lat, lng);
-    
+        
         IrradiationResponseTo irradiationResponseTo = new IrradiationResponseTo().setValues(irradiation);
         return ResponseEntity.status(HttpStatus.OK).body(irradiationResponseTo);
     }

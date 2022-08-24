@@ -1,6 +1,6 @@
 package com.ltk.api.solar.config.authentication;
 
-import com.ltk.api.solar.utils.DateUtil;
+import com.ltk.api.solar.tools.util.DateUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
